@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*var arr=[1,1,2,2,3,3,4,4,5];
+        var newArr=[];
+        for( var i=0; i<arr.length; i++){
+            if(newArr.indexOf(arr[i])==-1){
+                newArr.push(arr[i]);
+            }
+        }
+        console.log(newArr);*/
+
+
+        /*Array.prototype.unique2 = function () {
+            this.sort(); //先排序
+            var res = [this[0]];
+            for (var i = 1; i < this.length; i++) {
+                if (this[i] !== res[res.length - 1]) {
+                    res.push(this[i]);
+                }
+            }
+            return res;
+        }
+        var arr = [1, 'a', 'a', 'b', 'd', 'e', 'e', 1, 0]
+        alert(arr.unique2());*/
+
+
+        /*Array.prototype.unique1 = function () {
+            var res = [this[0]];
+            for (var i = 1; i < this.length; i++) {
+                var repeat = false;
+                for (var j = 0; j < res.length; j++) {
+                    if (this[i] == res[j]) {
+                        repeat = true;
+                        break;
+                    }
+                }
+                if (!repeat) {
+                    res.push(this[i]);
+                }
+            }
+            return res;
+        }
+        var arr = [1, 'a', 'a', 'b', 'd', 'e', 'e', 1, 0]
+        alert(arr.unique1());*/
+
+
+
+        /*Array.prototype.unique3 = function () {
+            var res = [];
+            var json = {};
+            for (var i = 0; i < this.length; i++) {
+                if (!json[this[i]]) {
+                    res.push(this[i]);
+                    json[this[i]] = 1;
+                }
+            }
+            return res;
+        }
+        var arr = [112, 112, 34, '你好', 112, 112, 34, '你好', 'str', 'str1'];
+        alert(arr.unique3());*/
+
+
+
+        //判断浏览器是否支持indexOf方法
+        /*if (!Array.prototype.indexOf) {
+            //新增indexOf方法
+            Array.prototype.indexOf = function (item) {
+                var result = -1,
+                    arr_item = null;
+                if (this.length == 0) {
+                    return result;
+                }
+                for (var i = 0, len = this.length; i < len; i++) {
+                    arr_item = this[i];
+                    if (arr_item === item) {
+                        result = i;
+                        break;
+                    }
+                }
+                return result;
+            };
+        }
+
+
+
+        function unique1(arr) {
+            var newArr = [];//新建一个数组
+            for (var i = 0, len = arr.length; i < len; i++) {
+                if (newArr.indexOf(arr[i]) == -1) {//若新数组中未包含该项则将其存入新数组
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }*/
+
+
+
+
+
+
+
+
+        /*function unique3(arr) {
+            arr.sort();
+            var newArr = [arr[0]];
+            for (var i = 1, len = arr.length; i < len; i++) {
+                if (arr[i] !== newArr[newArr.length - 1]) {
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }*/
+
+
+
+        /*function unique4(arr) {
+            var newArr = [];
+            for (var i = 0, len = arr.length; i < len; i++) {
+                for (var j = i + 1; j < len; j++) {
+                    if (arr[i] === arr[j]) {//获取没重复的最右一值放入新数组
+                        ++i;
+                    }
+                }
+                newArr.push(arr[i]);
+            }
+            return newArr;
+        }*/
+
+
+
+
+        /*引申：合并数组并去重
+
+一、concat()方法
+
+思路：concat() 方法将传入的数组或非数组值与原数组合并,组成一个新的数组并返回。该方法会产生一个新的数组。
+
+function concatArr(arr1, arr2){
+    var arr = arr1.concat(arr2);
+    arr = unique1(arr);//再引用上面的任意一个去重方法
+    return arr;
+}
+二、Array.prototype.push.apply()
+
+思路：该方法优点是不会产生一个新的数组。
+
+1 var a = [1, 2, 3];
+2 var b = [4, 5, 6];
+3 
+4 Array.prototype.push.apply(a, b);//a=[1,2,3,4,5,6]
+5 //等效于:a.push.apply(a, b);
+6 //也等效于[].push.apply(a, b); 
+1 function concatArray(arr1,arr2){
+2     Array.prototype.push.apply(arr1, arr2);
+3     arr1 = unique1(arr1);
+4     return arr1;
+5 }*/
+    </script>
+</body>
+
+</html>
